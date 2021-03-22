@@ -6,7 +6,7 @@ Sentimental is a web application that monitors the public response to feminist p
 Developed at <a href="https://buildyourfuture.withgoogle.com/programs/softwareproductsprint/"> Google SPS </a> by:
 
 <ul>
-  <li>Mariana Torres Torres</li>
+  <li><a href="https://github.com/MarianaTorresTorres">Mariana Torres Torres</a></li>
   <li><a href="https://github.com/caro99gm">Caronlina Gomez Manzano</a></li>
   <li><a href="https://github.com/Josekeitor">José Carlos Acosta</a></li>
 </ul>
