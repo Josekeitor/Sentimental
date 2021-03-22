@@ -1,12 +1,20 @@
-# Google Software Product Sprint
+# Sentimental (placeholder name btw)
 
-This repo contains the projects you'll work on throughout SPS.
+Sentimental is a web application that monitors the public response to feminist protests throughout México on twitter.
 
-To get started:
 
-- Login to [Google Cloud Shell](https://ssh.cloud.google.com/cloudshell/editor)
-- Clone this repo: `cd; git clone https://github.com/google/software-product-sprint.git`
-- Open the GitHub setup walkthrough: `teachme ~/software-product-sprint/walkthroughs/week-0-setup/github-setup-walkthrough.md`
-  - If the tutorial panel does not open or display the walkthrough contents, try refreshing the page.
+Developed at <a href="https://buildyourfuture.withgoogle.com/programs/softwareproductsprint/"> Google SPS </a> by:
 
-Then follow the on-screen instructions to set up your repo.
+<ul>
+  <li>Mariana Torres Torres</li>
+  <li>Caronlina Gomez Manzano</li>
+  <li><a href="https://github.com/Josekeitor">José Carlos Acosta</a></li>
+</ul>
+
+Built using:
+
+<ul>
+  <li><a href="https://www.oracle.com/java/technologies/javase-downloads.html">Java</a></li>
+  <li><a href="https://cloud.google.com">Google Cloud</a></li>
+  <li><a href="http://twitter4j.org/en/">Twitter4j</a></li>
+</ul>
