@@ -14,7 +14,7 @@ public final class Tweet {
     this.index = 0.0;
   }
 
-  public String getID() {
+  public long getID() {
       return this.id;
   }
 
@@ -22,11 +22,11 @@ public final class Tweet {
       return this.text;
   }
 
-  public String getTimestamp() {
+  public long getTimestamp() {
       return this.timestamp;
   }
 
-  public String getIndex() {
+  public float getIndex() {
       return this.index;
   }
 
