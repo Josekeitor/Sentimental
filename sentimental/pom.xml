@@ -46,6 +46,13 @@
       <version>[4.0,)</version>
     </dependency>
 
+    <!--Sentimental Analysis-->
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-language</artifactId>
+      <version>1.55.0</version>
+    </dependency>
+
     <!-- Datastore -->
     <dependency>
       <groupId>com.google.cloud</groupId>
