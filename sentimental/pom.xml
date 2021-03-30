@@ -12,11 +12,11 @@
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jetty.version>11.0.0</jetty.version>
+    <jetty.version>9.4.31.v20200723</jetty.version>
 
     <!-- Project-specific properties -->
     <exec.mainClass>com.google.sps.ServerMain</exec.mainClass>
-    <googleCloudProjectId>YOUR_PROJECT_ID_HERE</googleCloudProjectId>
+    <googleCloudProjectId>spring21-sps-37</googleCloudProjectId>
   </properties>
 
   <dependencies>
@@ -38,12 +38,14 @@
       <artifactId>jetty-annotations</artifactId>
       <version>${jetty.version}</version>
     </dependency>
+
     <!-- Twitter API -->
     <dependency>
       <groupId>org.twitter4j</groupId>
       <artifactId>twitter4j-core</artifactId>
       <version>[4.0,)</version>
     </dependency>
+
     <!--Sentimental Analysis-->
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -51,6 +53,12 @@
       <version>1.55.0</version>
     </dependency>
 
+    <!-- Datastore -->
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-datastore</artifactId>
+      <version>1.104.0</version>
+    </dependency>
   </dependencies>
 
   <build>
