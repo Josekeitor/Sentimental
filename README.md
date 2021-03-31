@@ -7,7 +7,7 @@ Developed at <a href="https://buildyourfuture.withgoogle.com/programs/softwarepr
 
 <ul>
   <li><a href="https://github.com/MarianaTorresTorres">Mariana Torres Torres</a></li>
-  <li><a href="https://github.com/caro99gm">Caronlina Gomez Manzano</a></li>
+  <li><a href="https://github.com/caro99gm">Carolina Gomez Manzano</a></li>
   <li><a href="https://github.com/Josekeitor">José Carlos Acosta</a></li>
 </ul>
 
