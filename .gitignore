@@ -3,4 +3,5 @@
 .project
 .settings/
 target/
+twitter4j.properties
 spring21-sps-37.json
