@@ -5,6 +5,7 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script src="sentiment.js"></script>
   </head>
   <body>
     <div id="content">
@@ -14,6 +15,11 @@
       <p>Click here to get a random message:</p>
       <button onclick="addRandomGreeting()">Hello</button>
       <div id="greeting-container"></div>
+    </div>
+    <div id = "content">
+      <h1>Sentiment Analysis</h1>
+      <button onclick="sentimentText()">Click here</button>
+      <div id = "sentimentResult"></div>
     </div>
   </body>
 </html>
