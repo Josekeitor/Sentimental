@@ -1,4 +1,4 @@
-package main.java.com.google.sps.data;
+package com.google.sps.data;
 
 public final class Tweet {
 
@@ -11,7 +11,7 @@ public final class Tweet {
     this.id = _id;
     this.text = _text;
     this.timestamp = _timestamp;
-    this.index = 0.0;
+    this.index = 0.0F;
   }
 
   public long getID() {
