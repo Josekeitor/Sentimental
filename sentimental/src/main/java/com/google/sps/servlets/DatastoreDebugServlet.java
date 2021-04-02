@@ -18,17 +18,7 @@ public class DatastoreDebugServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response)
       throws IOException {
 
-    // Store some fake tweets for testing.
-    // NOTE: We probably want to delete this before we deploy this code to the
-    // live site!
-    List<Tweet> input = new ArrayList<>();
-    input.add(new Tweet(1, "hello", 1000));
-    input.add(new Tweet(2, "abc", 2000));
-    input.add(new Tweet(3, "xyz", 3000));
-
     DatastoreService datastoreService = new DatastoreService();
-    datastoreService.saveTweets(input);
-
     List<Tweet> output = datastoreService.getAllTweets();
 
     response.setContentType("text/html;");

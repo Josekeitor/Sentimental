@@ -13,45 +13,31 @@ import com.google.sps.data.Tweet;
 import java.util.List;
 import java.util.ArrayList;
 import com.google.sps.twitterapi.API;
+import com.google.sps.data.DatastoreService;
 
 @WebServlet("/sentiment")
 public class SentimentServlet extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-    //List<Status> tweets;
-    ArrayList<Tweet> tweets;
-    float results[];
-
     API readTweets = new API();
-    tweets = readTweets.searchTweets("Hello");
+    ArrayList<Tweet> tweets = readTweets.searchTweets("Hello");
     System.out.println(tweets.get(0).getText());
-
-    /*
-    try{
-        API readTweets = new API();
-        tweets = readTweets.searchTweets("Hello");
-        System.out.println(tweets.get(0).getText());
-    }catch(TwitterException e){
-        response.setContentType("text/html;");
-        response.getWriter().println(e.getMessage());
-        return;
-    }
-    */
-
-    results = new float[tweets.size()];
     
     for(int i = 0; i < tweets.size(); i++){
-        String message = tweets.get(i).getText();
+      Tweet tweet = tweets.get(i);
+      String message = tweet.getText();
 
         Document doc =
             Document.newBuilder().setContent(message).setType(Document.Type.PLAIN_TEXT).build();
         LanguageServiceClient languageService = LanguageServiceClient.create();
         Sentiment sentiment = languageService.analyzeSentiment(doc).getDocumentSentiment();
-        results[i] = sentiment.getScore();
+        tweet.setSentimentScore(sentiment.getScore());
         languageService.close();
     }
+
+    DatastoreService ds = new DatastoreService();
+    ds.saveTweets(tweets);
 
     // Output the sentiment score as HTML.
     // A real project would probably store the score alongside the content.
@@ -59,8 +45,9 @@ public class SentimentServlet extends HttpServlet {
     response.getWriter().println("<h1>Sentiment Analysis</h1>");
     //response.getWriter().println("<p>You entered: " + message + "</p>");
     response.getWriter().println("<ol>");
-    for(float score : results){
-        response.getWriter().println("<li>Sentiment analysis score: " + score + "</li>");
+    for(Tweet tweet : tweets){
+      response.getWriter().println("<li>Tweet: " + tweet.getText() + "</li>");
+      response.getWriter().println("<li>Sentiment analysis score: " + tweet.getSentimentScore() + "</li>");
     }
     response.getWriter().println("</ol>");
     
