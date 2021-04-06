@@ -18,7 +18,13 @@ public class API{
 
             for (Status rawTweet: rawTweets
                  ) {
-                Tweet newTweet = new Tweet(rawTweet.getId(), rawTweet.getText(), rawTweet.getCreatedAt().getTime());
+                Tweet newTweet = new Tweet(
+                    rawTweet.getId(), 
+                    rawTweet.getText(), 
+                    rawTweet.getCreatedAt().getTime(), 
+                    rawTweet.getGeoLocation().getLatitude(), 
+                    rawTweet.getGeoLocation().getLongitude()
+                    );
                 tweets.add(newTweet);
             }
 
