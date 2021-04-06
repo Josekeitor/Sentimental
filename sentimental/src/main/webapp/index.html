@@ -5,6 +5,7 @@
     <title>Sentimental</title>
     <link rel="stylesheet" href="style.css">
     <script src="sentiment.js"></script>
+    <script src="map.js"></script>
   </head>
   <body>
       <div id="sentimentResult"></div>
@@ -13,6 +14,15 @@
       <h1>Sentiment Analysis</h1>
       <button onclick="sentimentText()">Click here</button>
       <div id = "sentimentResult"></div>
+      <!--This map will be somewhere else in the actual website, but it's here for now-->
+      <h3>Map of Mexico</h3>
+      <!--The div element for the map -->
+      <div id="map"></div>
+      <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
+        async
+      ></script>
     </div>
   </body>
 </html>
