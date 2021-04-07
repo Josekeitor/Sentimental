@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Data Visualizer - Sentimental</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="./assets/favicon.ico"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/script.js" defer></script>
+  </head>
+  <body onload="visualizerGreeting()">
+    <div class="navbar" id="about-navbar">
+      <a href="/">
+        <img
+          src="./assets/logo.png"
+          class="logo"
+        />
+      </a>
+      <nav>
+        <ul>
+          <li>
+            <a href="about.html">
+              About
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div id="visuals-page">
+      <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'heat-map')">
+          Heat Map
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'word-cloud')">
+          Word Cloud
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'tweet-list')">
+          Tweet List
+        </button>
+        <a href="visuals.html">
+          <button id="refresh-button">
+            REFRESH
+          </button>
+        </a>
+      </div>
+
+      <div id="heat-map" class="tabcontent">
+        <h3>Sentiment Analysis Heat Map of Mexico</h3>
+        <p>London is the capital city of England.</p>
+        <p>London is the capital city of England.</p>
+        <p>London is the capital city of England.</p>
+        <p>London is the capital city of England.</p>
+        <p>London is the capital city of England.</p>
+        <p>London is the capital city of England.</p>
+        <p>London is the capital city of England.</p>
+      </div>
+
+      <div id="word-cloud" class="tabcontent">
+        <h3>Common words used by Feminist Movement</h3>
+        <p>This is where Carolinas word cloud will be</p>
+      </div>
+
+      <div id="tweet-list" class="tabcontent">
+        <h3>Tweet Data</h3>
+        <p>Just in case y'all want to add another thing!</p>
+      </div>
+    </div>
+  </body>
+</html>
