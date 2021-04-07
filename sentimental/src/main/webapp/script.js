@@ -12,8 +12,15 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
-function visualizerGreeting() {
+function setUpVisualizer() {
+  //tells the user how to start looking at the data
   alert(
     "Welcome to the data visualizer! Click any of the tabs below to get started :)"
   );
+  //also fetches the data so the user doesn't have to
+  sentimentText();
+}
+
+function refreshData() {
+    sentimentText();
 }

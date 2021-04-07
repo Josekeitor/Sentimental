@@ -14,7 +14,7 @@
     <script src="sentiment.js"></script>
     <script src="map.js"></script>
   </head>
-  <body onload="visualizerGreeting()">
+  <body onload="setUpVisualizer()">
     <div class="navbar" id="about-navbar">
       <a href="/">
         <img
@@ -40,10 +40,10 @@
         <button class="tablinks" onclick="openTab(event, 'word-cloud')">
           Word Cloud
         </button>
-        <button class="tablinks" onclick="openTab(event, 'tweet-list')">
-          Tweet List
+        <button class="tablinks" onclick="openTab(event, 'tweet-data')">
+          Tweet Data
         </button>
-        <a href="visuals.html">
+        <a onClick="refreshData()">
           <button id="refresh-button">
             REFRESH
           </button>
@@ -66,11 +66,10 @@
         <p>This is where Carolinas word cloud will be</p>
       </div>
 
-      <div id="tweet-list" class="tabcontent">
+      <div id="tweet-data" class="tabcontent">
         <h3>Tweet Data</h3>
-        <div id = "content">
-          <button onclick="sentimentText()">Click here</button>
-          <div id = "sentimentResult"></div>
+        <div id="content">
+          <div id="sentimentResult"></div>
         </div>
       </div>
     </div>
