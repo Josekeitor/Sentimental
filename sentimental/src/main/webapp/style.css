@@ -1,3 +1,186 @@
+:root {
+  --dark: #003f5c;
+  --indigo: ##58508d;
+  --plum: #bc5090;
+  --coral: #ff6361;
+  --yellow: #ffa600;
+  --white: #efefef;
+}
+
+@font-face {
+  font-family: Spartan;
+  src: url(https://cdn.glitch.com/23f6eeca-cb3d-44f2-9608-0379158305f6%2FLeagueSpartan-Bold.otf?v=1614279957203);
+}
+
+@font-face {
+  font-family: HK Light;
+  src: url(https://cdn.glitch.com/23f6eeca-cb3d-44f2-9608-0379158305f6%2FHKGrotesk-Light.otf?v=1614291741572);
+}
+
+@font-face {
+  font-family: HK Med;
+  src: url(https://cdn.glitch.com/23f6eeca-cb3d-44f2-9608-0379158305f6%2FHKGrotesk-Medium.otf?v=1614292257144);
+}
+
+#particles-js canvas {
+  display: block;
+  background: var(--dark);
+  position: fixed;
+  z-index: -1;
+}
+
+h1 {
+  color: var(--white);
+  font-family: Spartan;
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+h2 {
+  color: var(--white);
+  font-family: HK Med;
+  font-size: 2rem;
+  text-align: center;
+  padding: 0 10rem;
+}
+
+h3 {
+  color: var(--dark);
+  font-family: HK Med;
+  font-size: 2rem;
+  padding: 0 1rem;
+}
+
+p {
+  color: var(--dark);
+  font-family: HK Light;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0 10rem;
+}
+
+.navbar {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 15%;
+  padding-left: 8%;
+  padding-right: 8%;
+}
+
+nav {
+  flex: 1;
+  text-align: right;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin-left: 60px;
+}
+
+nav ul li a {
+  color: var(--white);
+  font-family: HK Med;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: var(--yellow);
+  font-family: HK Med;
+  text-decoration: underline;
+}
+
+.logo {
+  cursor: pointer;
+  width: 100px;
+}
+
+#home {
+  height: 200px;
+  position: relative;
+}
+
+button {
+  border-radius: 2rem;
+  font-family: HK Light;
+  font-size: 2rem;
+  margin-top: 2rem;
+  padding: 0.5rem;
+  transition-duration: 0.3s;
+}
+
+button:hover {
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+#learn-more {
+  margin-left: 42%;
+}
+
+#about-page h1,
+#about-page h2,
+#about-page p,
+#about-navbar a {
+  color: var(--dark);
+}
+
+#about-navbar a:hover {
+  color: var(--yellow);
+}
+
+#about-page h2 {
+  font-size: 3rem;
+}
+
+#enter-button {
+  font-size: 1rem;
+  margin-left: 40%;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.tab button {
+  background-color: inherit;
+  border-radius: 0;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 0;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+#refresh-button {
+  float: right;
+  margin-right: 1rem;
+}
+
 #content {
   margin-left: auto;
   margin-right: auto;
@@ -6,4 +189,18 @@
 
 #greeting-container {
   margin-top: 20px;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+#map button {
+    border-radius: 0 !important;
+}
+
+#sentimentResult li {
+    color: var(--dark);
+    font-family: HK Light;
 }

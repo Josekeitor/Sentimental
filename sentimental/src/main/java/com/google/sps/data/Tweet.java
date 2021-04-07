@@ -1,17 +1,21 @@
-package main.java.com.google.sps.data;
+package com.google.sps.data;
 
 public final class Tweet {
 
   private final long id;
   private final String text;
   private final long timestamp;
-  private float index;
+  private double sentimentScore;
 
-  public Tweet(long _id, String _text, long _timestamp) {
+  public Tweet(long _id, String _text, long _timestamp, double _sentimentScore) {
     this.id = _id;
     this.text = _text;
     this.timestamp = _timestamp;
-    this.index = 0.0;
+    this.sentimentScore = _sentimentScore;
+  }
+
+  public Tweet(long _id, String _text, long _timestamp) {
+    this(_id, _text, _timestamp, 0);
   }
 
   public long getID() {
@@ -26,11 +30,11 @@ public final class Tweet {
       return this.timestamp;
   }
 
-  public float getIndex() {
-      return this.index;
+  public double getSentimentScore() {
+      return this.sentimentScore;
   }
 
-  public void setIndex(float _index) {
-      this.index = _index;
+  public void setSentimentScore(float sentimentScore) {
+      this.sentimentScore = sentimentScore;
   }
 }

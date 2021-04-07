@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sentimental - Tweet Fetch Example</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      /** Fetches tweets and adds them to the page. */
+      async function getTweets() {
+        const response = await fetch('/fetch-tweets');
+        const tweets = await response.json();
+
+        const tweetContainer = document.getElementById('tweets');
+        tweetContainer.appendChild(buildTable(tweets));
+      }
+
+      function buildTable(tweets) {
+        const table = document.createElement('table');
+        table.innerHTML = '<tr><th>ID</th><th>Text</th><th>Sentiment</th><th>Timestamp</th></tr>';
+        for(const tweet of tweets) {
+          table.innerHTML += buildTableRow(tweet);
+        }
+        return table;
+      }
+
+      function buildTableRow(tweet) {
+        return `<tr><td>${tweet.id}</td>
+                <td>${tweet.text}</td>
+                <td>${tweet.sentimentScore}</td>
+                <td>${tweet.timestamp}</td></tr>`;
+      }
+
+    </script>
+  </head>
+  <body onload="getTweets()">
+    <div id="content">
+      <h1>Tweets</h1>
+      <div id="tweets"></div>
+    </div>
+  </body>
+</html>
