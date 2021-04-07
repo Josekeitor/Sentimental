@@ -11,6 +11,8 @@
     />
     <link rel="stylesheet" href="/style.css" />
     <script src="/script.js" defer></script>
+    <script src="sentiment.js"></script>
+    <script src="map.js"></script>
   </head>
   <body onload="visualizerGreeting()">
     <div class="navbar" id="about-navbar">
@@ -50,13 +52,13 @@
 
       <div id="heat-map" class="tabcontent">
         <h3>Sentiment Analysis Heat Map of Mexico</h3>
-        <p>London is the capital city of England.</p>
-        <p>London is the capital city of England.</p>
-        <p>London is the capital city of England.</p>
-        <p>London is the capital city of England.</p>
-        <p>London is the capital city of England.</p>
-        <p>London is the capital city of England.</p>
-        <p>London is the capital city of England.</p>
+        <!--The div element for the map -->
+        <div id="map"></div>
+        <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+        <script
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
+          async
+        ></script>
       </div>
 
       <div id="word-cloud" class="tabcontent">
@@ -66,7 +68,10 @@
 
       <div id="tweet-list" class="tabcontent">
         <h3>Tweet Data</h3>
-        <p>Just in case y'all want to add another thing!</p>
+        <div id = "content">
+          <button onclick="sentimentText()">Click here</button>
+          <div id = "sentimentResult"></div>
+        </div>
       </div>
     </div>
   </body>
