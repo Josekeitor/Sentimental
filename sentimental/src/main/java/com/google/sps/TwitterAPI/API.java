@@ -18,12 +18,19 @@ public class API{
 
             for (Status rawTweet: rawTweets
                  ) {
+                System.out.println("vibe check");
+                double langitude = 0.0;
+                double longitude = 0.0;
+                if(rawTweet.getGeoLocation() != null) {
+                    langitude = rawTweet.getGeoLocation().getLatitude();
+                    longitude = rawTweet.getGeoLocation().getLongitude();
+                }
                 Tweet newTweet = new Tweet(
                     rawTweet.getId(), 
                     rawTweet.getText(), 
                     rawTweet.getCreatedAt().getTime(), 
-                    rawTweet.getGeoLocation().getLatitude(), 
-                    rawTweet.getGeoLocation().getLongitude()
+                    langitude, 
+                    longitude
                     );
                 tweets.add(newTweet);
             }
@@ -36,7 +43,9 @@ public class API{
     }
 
     private QueryResult search(String keyword) throws TwitterException {
-        Query query = new Query(keyword);
+        //Query query = new Query(keyword);
+        Query query = new Query().geoCode(new GeoLocation(19.432608, -99.133209), 50, Query.KILOMETERS); 
+        query.count(10);
         return twitterAPI.search(query);
     }
 

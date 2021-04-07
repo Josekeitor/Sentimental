@@ -21,7 +21,7 @@ public class SentimentServlet extends HttpServlet {
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     API readTweets = new API();
-    ArrayList<Tweet> tweets = readTweets.searchTweets("Hello");
+    ArrayList<Tweet> tweets = readTweets.searchTweets("#birdphotography");
     System.out.println(tweets.get(0).getText());
     
     for(int i = 0; i < tweets.size(); i++){
@@ -48,6 +48,7 @@ public class SentimentServlet extends HttpServlet {
     for(Tweet tweet : tweets){
       response.getWriter().println("<li>Tweet: " + tweet.getText() + "</li>");
       response.getWriter().println("<li>Sentiment analysis score: " + tweet.getSentimentScore() + "</li>");
+      response.getWriter().println("<li>Langitude: " + tweet.getLangitude() + ", Longitude: " + tweet.getLongitude() + "</li>");
     }
     response.getWriter().println("</ol>");
     
