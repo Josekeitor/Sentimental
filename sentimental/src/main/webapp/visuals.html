@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Data Visualizer - Sentimental</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="./assets/favicon.ico"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="sentiment.js"></script>
+    <script src="map.js"></script>
+  </head>
+  <body onload="setUpVisualizer()">
+    <div class="navbar" id="about-navbar">
+      <a href="/">
+        <img
+          src="./assets/logo.png"
+          class="logo"
+        />
+      </a>
+      <nav>
+        <ul>
+          <li>
+            <a href="about.html">
+              About
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div id="visuals-page">
+      <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'heat-map')">
+          Heat Map
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'word-cloud')">
+          Word Cloud
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'tweet-data')">
+          Tweet Data
+        </button>
+        <a onClick="refreshData()">
+          <button id="refresh-button">
+            REFRESH
+          </button>
+        </a>
+      </div>
+
+      <div id="heat-map" class="tabcontent">
+        <h3>Sentiment Analysis Heat Map of Mexico</h3>
+        <!--The div element for the map -->
+        <div id="map"></div>
+        <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+        <script
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
+          async
+        ></script>
+      </div>
+
+      <div id="word-cloud" class="tabcontent">
+        <h3>Common words used by Feminist Movement</h3>
+        <p>This is where Carolinas word cloud will be</p>
+      </div>
+
+      <div id="tweet-data" class="tabcontent">
+        <h3>Tweet Data</h3>
+        <div id="content">
+          <div id="sentimentResult"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
