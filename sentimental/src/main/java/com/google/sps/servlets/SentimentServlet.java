@@ -51,7 +51,6 @@ public class SentimentServlet extends HttpServlet {
     for(Tweet tweet : tweets){
       response.getWriter().println("<li>Tweet: " + tweet.getText() + "</li>");
       response.getWriter().println("<li>Sentiment analysis score: " + tweet.getSentimentScore() + "</li>");
-      response.getWriter().println("<li>Langitude: " + tweet.getLangitude() + ", Longitude: " + tweet.getLongitude() + "</li>");
     }
     response.getWriter().println("</ol>");
     

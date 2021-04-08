@@ -20,24 +20,8 @@ public class API{
 
             for (Status rawTweet: rawTweets
                  ) {
-<<<<<<< HEAD
-                double langitude = 0.0;
-                double longitude = 0.0;
-                if(rawTweet.getGeoLocation() != null) {
-                    langitude = rawTweet.getGeoLocation().getLatitude();
-                    longitude = rawTweet.getGeoLocation().getLongitude();
-                }
-                Tweet newTweet = new Tweet(
-                    rawTweet.getId(), 
-                    rawTweet.getText(), 
-                    rawTweet.getCreatedAt().getTime(), 
-                    langitude, 
-                    longitude
-                    );
-=======
                 Tweet newTweet = new Tweet(rawTweet.getId(), rawTweet.getText(), rawTweet.getCreatedAt().getTime());
                 newTweet.setCity(city);
->>>>>>> 4ae7a29fec8174e9fbe67a7fec08c3002a5c04cb
                 tweets.add(newTweet);
                 System.out.println(newTweet.getCity());
             }
@@ -51,17 +35,10 @@ public class API{
 
     }
 
-<<<<<<< HEAD
-    private QueryResult search(String keyword) throws TwitterException {
-        //Query query = new Query(keyword);
-        Query query = new Query().geoCode(new GeoLocation(19.432608, -99.133209), 50, Query.KILOMETERS); 
-        query.count(10);
-=======
     private QueryResult search(String keyword, String city) throws TwitterException {
         Query query = new Query(keyword);
         GeoLocation geo = mexicanCities.get(city);
         query.setGeoCode(geo, 50, Query.Unit.km);
->>>>>>> 4ae7a29fec8174e9fbe67a7fec08c3002a5c04cb
         return twitterAPI.search(query);
     }
 
