@@ -18,9 +18,6 @@ public class API{
 
             for (Status rawTweet: rawTweets
                  ) {
-                System.out.println(rawTweet.getPlace());
-                //System.out.println(rawTweet.getGeoLocation());
-                //System.out.println(rawTweet.getUser().getLocation());
                 double langitude = 0.0;
                 double longitude = 0.0;
                 if(rawTweet.getGeoLocation() != null) {
