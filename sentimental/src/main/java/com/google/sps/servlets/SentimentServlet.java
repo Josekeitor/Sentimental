@@ -21,7 +21,7 @@ public class SentimentServlet extends HttpServlet {
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     API readTweets = new API();
-    ArrayList<Tweet> tweets = readTweets.searchTweets("#birdphotography");
+    ArrayList<Tweet> tweets = readTweets.searchTweets("feminismo");
     System.out.println(tweets.get(0).getText());
     
     for(int i = 0; i < tweets.size(); i++){
@@ -38,6 +38,9 @@ public class SentimentServlet extends HttpServlet {
 
     DatastoreService ds = new DatastoreService();
     ds.saveTweets(tweets);
+    List<Tweet> dsTweets = ds.getAllTweets();
+    int lastIndex = dsTweets.size();
+    System.out.println("Tweet from datastore: " + dsTweets.get(lastIndex-1).getCity());
 
     // Output the sentiment score as HTML.
     // A real project would probably store the score alongside the content.

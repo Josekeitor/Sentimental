@@ -8,18 +8,20 @@ public final class Tweet {
   private final double langitude;
   private final double longitude;
   private double sentimentScore;
+  private String city;
 
-  public Tweet(long _id, String _text, long _timestamp, double _lang, double _long, double _sentimentScore) {
+  public Tweet(long _id, String _text, long _timestamp, double _sentimentScore, String _city) {
     this.id = _id;
     this.text = _text;
     this.timestamp = _timestamp;
     this.langitude = _lang;
     this.longitude = _long;
     this.sentimentScore = _sentimentScore;
+    this.city = _city;
   }
 
-  public Tweet(long _id, String _text, long _timestamp, double _lang, double _long) {
-    this(_id, _text, _timestamp, _lang, _long, 0);
+  public Tweet(long _id, String _text, long _timestamp) {
+    this(_id, _text, _timestamp, 0, "none");
   }
 
   public long getID() {
@@ -48,5 +50,13 @@ public final class Tweet {
 
   public void setSentimentScore(float sentimentScore) {
       this.sentimentScore = sentimentScore;
+  }
+
+  public String getCity(){
+      return this.city;
+  }
+
+  public void setCity(String city){
+      this.city = city;
   }
 }

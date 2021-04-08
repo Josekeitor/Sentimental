@@ -30,8 +30,9 @@ public class DatastoreService {
       double langitude = entity.getDouble("langitude");
       double longitude = entity.getDouble("longitude");      
       double sentimentScore = entity.getDouble("sentimentScore");
+      String city = entity.getString("city");      
 
-      Tweet tweet = new Tweet(id, text, timestamp, langitude, longitude, sentimentScore);
+      Tweet tweet = new Tweet(id, text, timestamp, sentimentScore, city);
       tweets.add(tweet);
     }
 
@@ -54,6 +55,7 @@ public class DatastoreService {
               .set("langitude", tweet.getLangitude())
               .set("longitude", tweet.getLongitude())
               .set("sentimentScore", tweet.getSentimentScore())
+              .set("city", tweet.getCity())
               .build();
       datastore.put(taskEntity);
     }

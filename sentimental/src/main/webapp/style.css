@@ -201,3 +201,11 @@ button:hover {
     color: var(--dark);
     font-family: HK Light;
 }
+
+html, #wordCloud {
+      width: 100%;
+      height: 800px;
+      margin: 0;
+      padding: 0;
+}
+
