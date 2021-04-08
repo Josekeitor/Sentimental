@@ -13,6 +13,10 @@
     <script src="script.js" defer></script>
     <script src="sentiment.js"></script>
     <script src="map.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
+    <script src = "wordCloud.js"></script>
+
   </head>
   <body onload="setUpVisualizer()">
     <div class="navbar" id="about-navbar">
@@ -63,7 +67,7 @@
 
       <div id="word-cloud" class="tabcontent">
         <h3>Common words used by Feminist Movement</h3>
-        <p>This is where Carolinas word cloud will be</p>
+        <div id = "wordCloud"></div>
       </div>
 
       <div id="tweet-data" class="tabcontent">
