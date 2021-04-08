@@ -5,8 +5,6 @@ public final class Tweet {
   private final long id;
   private final String text;
   private final long timestamp;
-  private final double langitude;
-  private final double longitude;
   private double sentimentScore;
   private String city;
 
@@ -14,8 +12,6 @@ public final class Tweet {
     this.id = _id;
     this.text = _text;
     this.timestamp = _timestamp;
-    this.langitude = _lang;
-    this.longitude = _long;
     this.sentimentScore = _sentimentScore;
     this.city = _city;
   }
@@ -34,14 +30,6 @@ public final class Tweet {
 
   public long getTimestamp() {
       return this.timestamp;
-  }
-
-  public double getLangitude() {
-      return this.langitude;
-  }
-
-  public double getLongitude() {
-      return this.longitude;
   }
 
   public double getSentimentScore() {
