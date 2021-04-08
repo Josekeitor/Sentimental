@@ -28,8 +28,9 @@ public class DatastoreService {
       String text = entity.getString("text");
       long timestamp = entity.getLong("timestamp");
       double sentimentScore = entity.getDouble("sentimentScore");
+      String city = entity.getString("city");      
 
-      Tweet tweet = new Tweet(id, text, timestamp, sentimentScore);
+      Tweet tweet = new Tweet(id, text, timestamp, sentimentScore, city);
       tweets.add(tweet);
     }
 
@@ -50,6 +51,7 @@ public class DatastoreService {
               .set("text", tweet.getText())
               .set("timestamp", tweet.getTimestamp())
               .set("sentimentScore", tweet.getSentimentScore())
+              .set("city", tweet.getCity())
               .build();
       datastore.put(taskEntity);
     }
