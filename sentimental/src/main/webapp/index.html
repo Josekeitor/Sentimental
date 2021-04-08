@@ -1,28 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
     <title>Sentimental</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="sentiment.js"></script>
-    <script src="map.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="./assets/favicon.ico"
+    />
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-      <div id="sentimentResult"></div>
+    <div id="particles-js"></div>
+    <!--These are the Particle.js files for the interactive background-->
+    <script src="./particleFiles/particles.js"></script>
+    <script src="./particleFiles/app.js"></script>
+    <div class="navbar">
+      <a href="/">
+        <img
+          src="./assets/logo.png"
+          class="logo"
+        />
+      </a>
+      <nav>
+        <ul>
+          <li>
+            <a href="about.html">
+              About
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <div id = "content">
-      <h1>Sentiment Analysis</h1>
-      <button onclick="sentimentText()">Click here</button>
-      <div id = "sentimentResult"></div>
-      <!--This map will be somewhere else in the actual website, but it's here for now-->
-      <h3>Map of Mexico</h3>
-      <!--The div element for the map -->
-      <div id="map"></div>
-      <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-      <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
-        async
-      ></script>
-    </div>
+    <div id="home">
+      <h1>
+        S E N T I M E N T A L
+      </h1>
+      <h2>
+        Look at the shifts in public opinion about the feminist movement in
+        Mexico using Twitter data
+      </h2>
+      <a href="about.html">
+        <button id="learn-more">
+          LEARN MORE
+        </button>
+      </a>
   </body>
 </html>

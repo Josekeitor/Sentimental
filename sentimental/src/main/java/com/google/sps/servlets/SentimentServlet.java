@@ -42,7 +42,7 @@ public class SentimentServlet extends HttpServlet {
     // Output the sentiment score as HTML.
     // A real project would probably store the score alongside the content.
     response.setContentType("text/html;");
-    response.getWriter().println("<h1>Sentiment Analysis</h1>");
+    //response.getWriter().println("<h1>Sentiment Analysis</h1>");
     //response.getWriter().println("<p>You entered: " + message + "</p>");
     response.getWriter().println("<ol>");
     for(Tweet tweet : tweets){
