@@ -26,6 +26,8 @@ public class DatastoreDebugServlet extends HttpServlet {
     response.getWriter().println("<tr>");
     response.getWriter().println("<th>ID</th>");
     response.getWriter().println("<th>Text</th>");
+    response.getWriter().println("<th>Langitude</th>");
+    response.getWriter().println("<th>Longitude</th>");
     response.getWriter().println("<th>Timestamp</th>");
     response.getWriter().println("</tr>");
     for(Tweet tweet : output) {

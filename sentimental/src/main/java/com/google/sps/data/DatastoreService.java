@@ -26,7 +26,7 @@ public class DatastoreService {
 
       long id = entity.getKey().getId();
       String text = entity.getString("text");
-      long timestamp = entity.getLong("timestamp");
+      long timestamp = entity.getLong("timestamp");     
       double sentimentScore = entity.getDouble("sentimentScore");
       String city = entity.getString("city");      
 
