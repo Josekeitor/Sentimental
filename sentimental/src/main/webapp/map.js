@@ -1,10 +1,23 @@
 // Initialize and add the map
-function initMap() {
+async function initMap() {
+  const response = await fetch("/fetch-tweets", {method:'GET'});
+  const datos = await response.json();
   /* Data points defined as a mixture of WeightedLocation and LatLng objects */
   let heatMapData = [];
   let mexicoCity = { lat: 19.432608, lng: -99.133209 };
-  for(let i = 0; i < 10; i++) {
-      let loc = new google.maps.LatLng(mexicoCity.lat + Math.random(-5, 5), mexicoCity.lng + Math.random(-5, 5));
+  let guadalajara = { lat: 20.66682, lng: -103.39182 };
+  let monterrey = { lat: 25.67507, lng: -100.31847 };
+  for(let i = 0; i < datos.length; i++) {
+      let loc;
+      if(datos[i].city == "Ciudad de Mexico") {
+          loc = new google.maps.LatLng(mexicoCity.lat - 1 + Math.random() * 2, mexicoCity.lng - 1 + Math.random() * 2);
+      }
+      if(datos[i].city == "Guadalajara") {
+          loc = new google.maps.LatLng(guadalajara.lat - 1 + Math.random() * 2, guadalajara.lng - 1 + Math.random() * 2);
+      }
+      if(datos[i].city == "Monterrey") {
+          loc = new google.maps.LatLng(monterrey.lat - 1 + Math.random() * 2, monterrey.lng - 1 + Math.random() * 2);
+      }
       heatMapData.push({location: loc, weight: (i / 10) + 1});
   }
   // The map, centered at Mexico City
