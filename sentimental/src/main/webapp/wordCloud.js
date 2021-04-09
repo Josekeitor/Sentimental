@@ -3,7 +3,7 @@ anychart.onDocumentReady(async function(){
   var chart = anychart.tagCloud(data);
   
   const response = await fetch("/wordCloud", {method:'GET'});
-  const datos = response.json();
+  const datos = await response.json();
   var data = "";
   for(let i = 0; i < datos.length; i++){
         data += datos[i].text.toLowerCase() + " ";
