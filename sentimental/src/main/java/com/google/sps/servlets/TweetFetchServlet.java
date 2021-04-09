@@ -18,7 +18,7 @@ public class TweetFetchServlet extends HttpServlet {
 
         DatastoreService datastoreService = new DatastoreService();
         List<Tweet> tweets = datastoreService.getAllTweets();
-
+        
         Gson gson = new Gson();
         String json = gson.toJson(tweets);
 

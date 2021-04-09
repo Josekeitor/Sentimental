@@ -46,6 +46,10 @@ public class API{
         return result.getTweets();
     }
 
+    public GeoLocation getGeoLocation(String city){
+        return mexicanCities.get(city);
+    }
+
     private HashMap<String, GeoLocation> populateCities(){
         HashMap<String, GeoLocation> cities = new HashMap<>();
         GeoLocation geo = new GeoLocation(19.42847, -99.12766);

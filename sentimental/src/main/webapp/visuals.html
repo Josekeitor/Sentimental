@@ -11,7 +11,6 @@
     />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <script src="sentiment.js"></script>
     <script src="map.js"></script>
   </head>
   <body onload="setUpVisualizer()">
@@ -43,11 +42,6 @@
         <button class="tablinks" onclick="openTab(event, 'tweet-data')">
           Tweet Data
         </button>
-        <a onClick="refreshData()">
-          <button id="refresh-button">
-            REFRESH
-          </button>
-        </a>
       </div>
 
       <div id="heat-map" class="tabcontent">

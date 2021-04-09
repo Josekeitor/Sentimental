@@ -17,8 +17,6 @@ function setUpVisualizer() {
   alert(
     "Welcome to the data visualizer! Click any of the tabs below to get started :)"
   );
-  //also fetches the data so the user doesn't have to
-  sentimentText();
 }
 
 function refreshData() {
