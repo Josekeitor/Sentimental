@@ -13,10 +13,14 @@ anychart.onDocumentReady(async function(){
         mode: "byWord",
         maxItems: 15,
         ignoreItems: [
-                      "y",
+                      "y", 
                       "el",
                       "la",
                       "lo",
+                      "las",
+                      "los",
+                      "les",
+                      "por",
                       "soy",
                       "no",
                       "si",
@@ -25,6 +29,10 @@ anychart.onDocumentReady(async function(){
                       "que",
                       "me",
                       "como",
+                      "cómo",
+                      "cuándo",
+                      "dónde",
+                      "qué",
                       "cuando",
                       "donde",
                       "con",
@@ -34,7 +42,20 @@ anychart.onDocumentReady(async function(){
                       "esta",
                       "estos",
                       "se",
-                      "al"
+                      "al",
+                      "le",
+                      "the",
+                      "a",
+                      "rt",
+                      "to",
+                      "for",
+                      "es",
+                      "is",
+                      "of",
+                      "my",
+                      "una",
+                      "su",
+                      "and"
                      ]
 });
   
