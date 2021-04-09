@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <script src="map.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
+    <script src = "wordCloud.js"></script>
+
   </head>
   <body onload="setUpVisualizer()">
     <div class="navbar" id="about-navbar">
@@ -50,14 +54,14 @@
         <div id="map"></div>
         <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
         <script
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1l9g90-a7Znz8-6HnzybZBnwbjG6K-zw&callback=initMap&libraries=&v=weekly"
           async
         ></script>
       </div>
 
       <div id="word-cloud" class="tabcontent">
         <h3>Common words used by Feminist Movement</h3>
-        <p>This is where Carolinas word cloud will be</p>
+        <div id = "wordCloud"></div>
       </div>
 
       <div id="tweet-data" class="tabcontent">
