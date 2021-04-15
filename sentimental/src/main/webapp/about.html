@@ -35,16 +35,24 @@
         How does Sentimental work?
       </h2>
       <p>
-        *here will go a more in-depth description of how we get our data and
-        what they should expect to see*
+        Sentimental uses the Twitter API to gather tweets from a variety of Mexican cities. 
+        Each of those tweets is passed through Google's Sentiment Analysis library 
+        to figure out how positive or negative the tweets are. Using all of this data, 
+        we created a data visualization tool to get a better understanding of the 
+        public perception of the Feminist Movement in Mexico.
       </p>
       <p>
-        *I guess we should explain to the user what input we need from them, if
-        we even need that? Idk*
+        Our data visualizer has three components: the Heatmap, the Word Cloud, 
+        and the Tweet Data. The Heatmap takes the location and sentiment analysis 
+        score of each tweet to look at the correlation between location and views on 
+        the feminist movement; the more green you see, the more positive the tweets are. 
+        The Word Cloud displays the most common words used by tweets that talk about 
+        feminism in Mexico. The Tweet Data list allows you to look at the tweets 
+        themselves, and they are arranged by city. You can click on any of the 
+        buttons in the navigation tab on the top to look at the data.
       </p>
       <p>
-        *Once the user clicks the button below, they will be directed to the
-        page where all the stuff we've been doing will be*
+        We hope you find our data analysis insightful!
       </p>
       <a href="visuals.html">
         <button id="enter-button">

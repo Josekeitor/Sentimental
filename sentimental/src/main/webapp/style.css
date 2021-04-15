@@ -159,11 +159,13 @@ button:hover {
 
 #about-page h2 {
   font-size: 3rem;
+  margin: 1rem 0;
 }
 
 #enter-button {
-  font-size: 1rem;
+  font-size: 1rem;  
   margin-left: 40%;
+  margin-top: 0.5rem;
 }
 
 .tab {
