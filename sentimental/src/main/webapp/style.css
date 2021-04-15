@@ -135,15 +135,28 @@ button {
   margin-top: 2rem;
   padding: 0.5rem;
   transition-duration: 0.3s;
+  background-color: var(--dark);
+  color: var(--white);
+  border: 2px solid var(--dark);
 }
 
 button:hover {
-  background-color: var(--yellow);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--dark);
+  border-color: var(--yellow);
 }
 
 #learn-more {
   margin-left: 42%;
+  background-color: var(--yellow);
+  
+
+  
+}
+
+#learn-more:hover {
+    background-color: var(--white);
+    color: var(--dark);
 }
 
 #about-page h1,
@@ -173,7 +186,6 @@ button:hover {
 }
 
 .tab button {
-  background-color: inherit;
   border-radius: 0;
   float: left;
   border: none;
@@ -186,7 +198,9 @@ button:hover {
 }
 
 .tab button:hover {
-  background-color: #ddd;
+  background-color: var(--white);
+  border-color: var(--yellow);
+  color: var(--dark);
 }
 
 .tab button.active {
