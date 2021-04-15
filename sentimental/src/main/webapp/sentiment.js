@@ -6,10 +6,5 @@ async function sentimentText() {
   //params.append('message', text);
   
   const responseFromServer = await fetch('/sentiment', {method: "POST"});//, body: params});
-    
-  const result = document.getElementById('sentimentResult');
-
-  result.innerHTML = await responseFromServer.text();
-  console.log(result);
 }
  
