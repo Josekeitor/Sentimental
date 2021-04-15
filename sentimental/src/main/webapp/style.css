@@ -51,6 +51,31 @@ h3 {
   font-size: 2rem;
   padding: 0 1rem;
 }
+.city-name {
+    color: black;
+    padding: 0;
+}
+
+.city-header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.city-header button{
+    background-color: var(--dark);
+    color: var(--white);
+    border: 2px solid var(--dark);
+    margin: 0;
+    font-size: 1rem;
+}
+
+.city-header button:hover{
+    background-color: var(--white);
+    color: var(--dark);
+    border: 2px solid var(--yellow);
+}
 
 p {
   color: var(--dark);
@@ -174,6 +199,13 @@ button:hover {
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+}
+
+.tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
 
 #refresh-button {

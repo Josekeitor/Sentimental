@@ -12,15 +12,55 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
-function setUpVisualizer() {
+async function setUpVisualizer() {
   //tells the user how to start looking at the data
+  await loadTweets();
   alert(
     "Welcome to the data visualizer! Click any of the tabs below to get started :)"
   );
-  //also fetches the data so the user doesn't have to
-  sentimentText();
 }
 
+function createTweet(tweet){
+    var html = "<div class='tweet'><h4>"+tweet.sentimentScore+"</h4><p>"+tweet.text+"</p>"
+    
+    return html
+}
+
+function showTweets(city){
+  const tweetsDiv = document.getElementById(city);
+  console.log('city: ', city);
+  console.log('tweet-div ', tweetsDiv);
+  if (tweetsDiv.style.display === 'none') {
+    tweetsDiv.style.display = 'flex';
+  } else {
+    tweetsDiv.style.display = 'none';
+  }
+  
+}
+
+async function loadTweets(){
+  const response = await fetch('/fetch-tweets');
+  const tweetsFromDS = await response.json();
+    
+  const result = document.getElementById('sentimentResult');
+  var cities = [];
+  totalTweets = tweetsFromDS.length;
+  for(var i=0; i<50; i++){
+      if(totalTweets < i){
+          break;
+      }
+      tweetCity = tweetsFromDS[i].city;
+      if(!cities.includes(tweetCity)){
+        cities.push(tweetCity);
+        
+        result.innerHTML += "<div> <div class='city-header'><h2 class='city-name'>"+tweetCity+"</h2> <button onclick='showTweets("+"\""+tweetCity+"\""+")'> Expand </button></div><div class='tweet' id='" + tweetCity+"' style='display:none'>"+createTweet(tweetsFromDS[i])+"</div></div>";
+      }else{
+        const cityDiv = document.getElementById(tweetCity);
+        cityDiv.innerHTML += createTweet(tweetsFromDS[i]);
+      }
+  }
+  console.log("tweets: ", tweetsFromDS[0]);
+}
 function refreshData() {
     sentimentText();
 }

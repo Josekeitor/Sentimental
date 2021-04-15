@@ -38,21 +38,12 @@ public class SentimentServlet extends HttpServlet {
 
     DatastoreService ds = new DatastoreService();
     ds.saveTweets(tweets);
-    List<Tweet> dsTweets = ds.getAllTweets();
-    int lastIndex = dsTweets.size();
-    System.out.println("Tweet from datastore: " + dsTweets.get(lastIndex-1).getCity());
+
 
     // Output the sentiment score as HTML.
     // A real project would probably store the score alongside the content.
-    response.setContentType("text/html;");
     //response.getWriter().println("<h1>Sentiment Analysis</h1>");
     //response.getWriter().println("<p>You entered: " + message + "</p>");
-    response.getWriter().println("<ol>");
-    for(Tweet tweet : tweets){
-      response.getWriter().println("<li>Tweet: " + tweet.getText() + "</li>");
-      response.getWriter().println("<li>Sentiment analysis score: " + tweet.getSentimentScore() + "</li>");
-    }
-    response.getWriter().println("</ol>");
     
     //response.getWriter().println("<p><a href=\"/\">Back</a></p>");
   }
